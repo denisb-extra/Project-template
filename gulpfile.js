@@ -6,7 +6,6 @@ const postcss = require('gulp-postcss');
 const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
 
-
 function styles(){
 	return gulp.src('app/scss/**/style.scss')
 		.pipe(sass({
@@ -29,7 +28,6 @@ function styles(){
 }
 
 function scripts(){
-	
 }
 
 function reload(){
