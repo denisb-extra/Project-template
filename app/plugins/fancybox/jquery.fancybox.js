@@ -9,6 +9,7 @@
 //
 // ==================================================
 ;(function (window, document, $, undefined) {
+    'use strict';
 
     // If there's no jQuery, fancyBox can't work
     // =========================================

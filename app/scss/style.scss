@@ -1,4 +1,6 @@
-@import 'normalize';
+$tab-w: 1200px;
+$mob-w: 920px;
+$small-w: 500px;
 
 @mixin border {
 	$red: random(256)-1;
@@ -23,34 +25,29 @@
 	}
 }
 
-@mixin headings {
-    h1, h2, h3,
-    h4, h5, h6 {
-        @content;
-    }
-}
-
 /* Fonts */
 
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&subset=hebrew');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700');
 
 @mixin f-l {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Heebo', sans-serif;
 	font-weight: 300;
 }
 
 @mixin f-r {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Heebo', sans-serif;
+	font-weight: normal;
 	font-weight: 400;
 }
 
 @mixin f-m {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Heebo', sans-serif;
+	font-weight: medium;
 	font-weight: 500;
 }
 
 @mixin f-b {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Heebo', sans-serif;
 	font-weight: 700;
 }
 
@@ -63,18 +60,12 @@
 /* Global */
 html {
 	margin: 0 !important;
-	@include f-r;
-	font-size: 18px;
-	color: #000;
 }
 body {
 	position: relative;
 	margin: 0;
   	padding: 0;
-
-  	@include headings {
-		margin: 0;
-	}
+  	overflow-x: hidden;
 }
 
 a {
@@ -95,12 +86,6 @@ ul {
 	margin: 0;
 	padding: 0;
 }
-
-.content ul {
-	list-style: disc;
-	padding-right: 20px;
-}
-
 section {
 	width: 100%;
 	max-width: 1920px;

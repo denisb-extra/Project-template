@@ -167,8 +167,13 @@ body.fancybox-iosfix {
   text-align: left;
   background-color: #fff;
   overflow: auto;
+  max-width: 100%;
   box-sizing: border-box; }
-
+@media only screen and (max-width : 768px) {
+  .fancybox-slide > * {
+    padding: 10px;
+  }
+}
 .fancybox-slide > title,
 .fancybox-slide > style,
 .fancybox-slide > meta,
