@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 $mw: 950px;
 $tw: 1200px;
 $lw: 1370px;
+=======
+$tab-w: 1200px;
+$mob-w: 920px;
+$small-w: 500px;
+>>>>>>> 6b946ee520f7f348c20a7f4cef607dbd7b5798ce
 
 @mixin border {
 	$red: random(256)-1;
@@ -25,6 +31,7 @@ $lw: 1370px;
 	}
 }
 
+<<<<<<< HEAD
 @mixin flex-center {
 	display: flex;
 	align-items: center;
@@ -38,6 +45,14 @@ $lw: 1370px;
 } 
 @mixin f-l {
 	font-family: 'almoni-light';
+=======
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700');
+
+@mixin f-l {
+	font-family: 'Heebo', sans-serif;
+>>>>>>> 6b946ee520f7f348c20a7f4cef607dbd7b5798ce
 	font-weight: 300;
 }
 
@@ -46,6 +61,7 @@ $lw: 1370px;
   	src: url('../fonts/almoni-dl-aaa-regular.otf') format('truetype'); 
 } 
 @mixin f-r {
+<<<<<<< HEAD
 	font-family: 'almoni-regular';
 	font-weight: 400;
 }
@@ -56,6 +72,21 @@ $lw: 1370px;
 } 
 @mixin f-b {
 	font-family: 'almoni-bold';
+=======
+	font-family: 'Heebo', sans-serif;
+	font-weight: normal;
+	font-weight: 400;
+}
+
+@mixin f-m {
+	font-family: 'Heebo', sans-serif;
+	font-weight: medium;
+	font-weight: 500;
+}
+
+@mixin f-b {
+	font-family: 'Heebo', sans-serif;
+>>>>>>> 6b946ee520f7f348c20a7f4cef607dbd7b5798ce
 	font-weight: 700;
 }
 
@@ -81,11 +112,14 @@ body {
 	margin: 0;
   	padding: 0;
   	overflow-x: hidden;
+<<<<<<< HEAD
   	@include f-r;
   	font-size: 18px;
   	@media only screen and (max-width : $mw) {
   		padding-top: 45px;
   	}
+=======
+>>>>>>> 6b946ee520f7f348c20a7f4cef607dbd7b5798ce
 }
 
 a {
