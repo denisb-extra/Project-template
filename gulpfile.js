@@ -1,26 +1,13 @@
 const gulp = require('gulp');
-const concat = require('gulp-concat');
 const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const postcss = require('gulp-postcss');
-const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
 
 function styles(){
 	return gulp.src('app/scss/**/style.scss')
-		.pipe(sass({
-			includePaths: require('node-normalize-scss').includePaths
-		}))
-		.pipe(concat('style.css'))
-		.pipe(postcss([ autoprefixer({
-			browsers: ['> 0.1%'],
-			cascade: false
-		}), ]))
-		/*
-		.pipe(cleanCSS({
-			level: 2
-		}))
-		*/
+		.pipe(sass())
+		.pipe(postcss([ autoprefixer() ]))
 		.pipe(gulp.dest('./app/css'))
 		.pipe(browserSync.reload({
 	    	stream: true
@@ -41,7 +28,6 @@ function watch(){
 
 	gulp.watch('app/scss/**/*', styles);
 }
-
 
 gulp.task('styles', styles);
 //gulp.task('scripts', scripts);

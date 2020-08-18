@@ -1,4 +1,6 @@
-@import 'normalize';
+$mw: 950px;
+$tw: 1200px;
+$lw: 1370px;
 
 @mixin border {
 	$red: random(256)-1;
@@ -23,62 +25,72 @@
 	}
 }
 
-@mixin headings {
-    h1, h2, h3,
-    h4, h5, h6 {
-        @content;
-    }
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* Fonts */
-
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&subset=hebrew');
-
+@font-face { 
+  	font-family: 'almoni-light'; 
+  	src: url('../fonts/almoni-dl-aaa-light.otf') format('truetype'); 
+} 
 @mixin f-l {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'almoni-light';
 	font-weight: 300;
 }
 
+@font-face { 
+  	font-family: 'almoni-regular'; 
+  	src: url('../fonts/almoni-dl-aaa-regular.otf') format('truetype'); 
+} 
 @mixin f-r {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'almoni-regular';
 	font-weight: 400;
 }
 
-@mixin f-m {
-	font-family: 'Rubik', sans-serif;
-	font-weight: 500;
-}
-
+@font-face { 
+  	font-family: 'almoni-bold'; 
+  	src: url('../fonts/almoni-dl-aaa-bold.otf') format('truetype'); 
+} 
 @mixin f-b {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'almoni-bold';
 	font-weight: 700;
 }
 
+@font-face { 
+  	font-family: 'almoni-black'; 
+  	src: url('../fonts/almoni-dl-aaa-black.otf') format('truetype'); 
+} 
+@mixin f-bl {
+	font-family: 'almoni-black';
+	font-weight: 900;
+}
 
 /* /Fonts */
-
 
 
 
 /* Global */
 html {
 	margin: 0 !important;
-	@include f-r;
-	font-size: 18px;
-	color: #000;
 }
 body {
 	position: relative;
 	margin: 0;
   	padding: 0;
-
-  	@include headings {
-		margin: 0;
-	}
+  	overflow-x: hidden;
+  	@include f-r;
+  	font-size: 18px;
+  	@media only screen and (max-width : $mw) {
+  		padding-top: 45px;
+  	}
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
+	color: inherit;
 }
 
 *, *::before, *::after {
@@ -86,7 +98,7 @@ a {
 	direction: rtl;
 }
 
-p {
+p,h1,h2,h3,h4,h5,h6 {
     margin: 0;
 }
 ul {
@@ -95,26 +107,39 @@ ul {
 	margin: 0;
 	padding: 0;
 }
-
-.content ul {
-	list-style: disc;
-	padding-right: 20px;
-}
-
 section {
 	width: 100%;
 	max-width: 1920px;
 	margin: auto;	
 	overflow: hidden;
+	position: relative;
+	padding: 90px 0;
+	&.no-padding {
+		padding: 0;
+	}
+	&.small-padding {
+		padding: 30px 0;
+	}
+	@media only screen and (max-width : $lw) {
+		padding: 75px 0;
+	}
+	@media only screen and (max-width : $tw) {
+		padding: 55px 0;
+	}
+	@media only screen and (max-width : $mw) {
+		padding: 35px 0;
+	}
 }
 
 .section-inner {
-	max-width: 1388px;
+	max-width: 1540px;
 	padding: 0 10px;
 	width: 100%;
 	margin: auto;
+	position: relative;
 }
 
 
+@import 'parts';
 @import 'index';
 @import 'inner';
